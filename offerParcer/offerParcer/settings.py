@@ -200,9 +200,9 @@ EMAIL_BACKEND = 'django.core.mail.backends.dummy.EmailBackend'
 
 EMAIL_HOST = 'smtp.yandex.ru'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'WyomingCPA@yandex.ru'
-EMAIL_HOST_PASSWORD = '!@#$Qwerty83448344qwerty'
-DEFAULT_FROM_EMAIL = 'WyomingCPA@yandex.ru'
+EMAIL_HOST_USER = '*****************'
+EMAIL_HOST_PASSWORD = '***************'
+DEFAULT_FROM_EMAIL = '******************'
 EMAIL_USE_TLS = True
 
 STATIC_URL = '/static/'
