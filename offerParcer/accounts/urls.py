@@ -1,4 +1,4 @@
-"""
+﻿"""
 Definition of urls for offerParcer.
 """
 
@@ -14,7 +14,7 @@ urlpatterns = patterns('',
 
     url(r'^(?P<username>(?!(signout|signup|signin)/)[\@\.\w-]+)/$', 'userena.views.profile_detail',
                {
-                   'extra_context': { 'Table': Offer.objects.all(), }
+                   'extra_context': { 'Table': Offer.objects.values('title', 'category', 'payout', 'countries', 'linkOffer').order_by().distinct(), }
                }, name='userena_profile_detail'),
 
     url(r'^', include('userena.urls')),

@@ -1,0 +1,17 @@
+<html>
+<head><title></title></head>
+
+<body>
+
+
+
+    <form action="" method="get">
+        {{ filter.form.as_p }}
+        <input type="submit" />
+    </form>
+    {% for obj in filter %}
+        {{ obj.category }}
+    {% endfor %}
+
+</body>
+</html>

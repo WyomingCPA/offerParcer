@@ -5,13 +5,19 @@
 {% block title %}{% blocktrans with profile.user.username as username %}{{ username }}'s profile.{% endblocktrans %}{% endblock %}
 {% block content_title %}<h2>{{ profile.user.username }} {% if profile.user.get_full_name %}({{ profile.user.get_full_name }}){% endif %}</h2>{% endblock %}
 
+
+
+
+
 {% block content %}
-{{ year }}
+
+
+
  <div class="ibox float-e-margins">
               <div class="ibox-content">
 
-                   <div class="table-responsive">
-                    <table class="table table-striped table-bordered table-hover dataTables-example" >
+                   <div id="editable_length" class="dataTables_length">
+                    <table id="editable" class="table table-striped table-bordered table-hover dataTable" role="grid" aria-describedby="editable_info">
                     <thead>
                     <tr>
                         <th>category</th>
@@ -19,28 +25,26 @@
                         <th>payout</th>
                         <th>countries</th>
                         <th>linkOffer</th>
-                        <th>link</th>
                     </tr>
                     </thead>
                     <tbody>
                     {% for item in Table %} 
                     <tr class="gradeX">
-                        <td>{{item.category}}item.category</td>
+                        <td>{{item.category}}</td>
                         <td>{{item.title}}</td>
                         <td>{{item.payout}}</td>
-                        <td class="center">4</td>
-                        <td class="center">X</td>
-                        <td class="center">X</td>
+                        <td>{{item.countries}}</td>
+                        <td><a href="http://{{item.linkOffer}}">{{item.linkOffer}}</a></td>
                     </tr>                          
                      {% endfor %}
                     </tbody>
                     <tfoot>
                     <tr>
-                        <th>Rendering engine</th>
-                        <th>Browser</th>
-                        <th>Platform(s)</th>
-                        <th>Engine version</th>
-                        <th>CSS grade</th>
+                        <th>category</th>
+                        <th>title</th>
+                        <th>payout</th>
+                        <th>countries</th>
+                        <th>linkOffer</th>
                     </tr>
                     </tfoot>
                     </table>

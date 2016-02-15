@@ -37,7 +37,7 @@ DATABASES = {
 AUTH_PROFILE_MODULE = 'accounts.Profile'
 
 
-USERENA_SIGNIN_REDIRECT_URL = '/accounts/%(username)s/'
+USERENA_SIGNIN_REDIRECT_URL = '/dashboard/'
 LOGIN_URL = '/accounts/signin/'
 LOGOUT_URL = '/accounts/signout/'
 
@@ -162,6 +162,7 @@ TEMPLATE_DIRS = (
 )
 
 INSTALLED_APPS = (
+
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -169,9 +170,13 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_tables2',
     'userena',
     'guardian',
     'easy_thumbnails',
+    'django_filters',
+    'pure_pagination',
+    'dashboard',
     'app',
     'accounts',
     'offers',
@@ -180,6 +185,17 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
 )
+
+
+PAGINATION_SETTINGS = {
+    'PAGE_RANGE_DISPLAYED': 10,
+    'MARGIN_PAGES_DISPLAYED': 2,
+
+    'SHOW_FIRST_PAGE_WHEN_INVALID': True,
+}
+
+
+
 EMAIL_BACKEND = 'django.core.mail.backends.dummy.EmailBackend'
 
 EMAIL_HOST = 'smtp.yandex.ru'

@@ -16,9 +16,11 @@ urlpatterns = patterns('',
     # Examples:
     #url(r'^$', 'app.views.home', name='home'),
     url(r'^$', 'userena.views.signin', { 'auth_form': AuthenticationFormCustom}),
-
+    url(r'^admin_tools/', include('admin_tools.urls')),
     url(r'^accounts/', include('accounts.urls')),
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^dashboard/', include('dashboard.urls')),
+    url(r'^test/', 'offers.views.product_list', name='product_list'),
     url(r'^contact$', 'app.views.contact', name='contact'),
     url(r'^about', 'app.views.about', name='about'),
     url(r'^login/$',
